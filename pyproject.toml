@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "pytravie-mqtt"
+version = "0.1.0"
+description = ""
+authors = ["Travis Vanderpool <travis.vanderpool@gmail.com>"]
+readme = "README.md"
+packages = [{include = "travie/mqtt"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+paho-mqtt = "^1.6.1"
+
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.6.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+extend-ignore = ["E701"]
+
+[tool.ruff.extend-per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.flake8]
+exclude = "docs"
+extend-ignore = ["E201","E202","E225","E227","E231","E701"]
+max-line-length = 175
+
+[tool.flake8.extend-per-file-ignores]
+__init__.py = ["F401"]
